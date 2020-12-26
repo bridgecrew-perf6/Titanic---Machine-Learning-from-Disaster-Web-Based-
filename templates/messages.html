@@ -1,0 +1,19 @@
+<title>Messages</title>
+
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="container">
+    {%for items in list%}
+        <div class="alert alert-danger" role="alert">
+            Please fillup {{items}} field properly!!    
+        </div>
+    {%endfor%}
+</div>
+<form action="retreat" method="POST">
+    {%csrf_token%}
+    <div class="container">
+        <button type="submit" class="btn btn-primary">FillUp</button>
+    </div>
+</form>
+{%endblock%}
